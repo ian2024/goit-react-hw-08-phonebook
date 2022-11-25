@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact, fetchContacts } from 'redux/phonebook/contacts/operation.contact';
-import { getContactList } from 'redux/selector';
+import { getContacts } from 'redux/selector';
 import { Item, Button } from './ContactList.styled';
 
 export const ContactList = () => {
 
     const dispatch = useDispatch();
-    const getContactItem = useSelector(getContactList);
+    const getContactItem = useSelector(getContacts);
     
   useEffect(() => {
     dispatch(fetchContacts());

@@ -1,4 +1,4 @@
-import { filterAction } from '../../redux/phonebook/filter/sliceFilter';
+import {  changeFilterAction } from '../../redux/phonebook/filter/sliceFilter';
 import { useDispatch, useSelector } from 'react-redux';
 import { Label, Input } from './Filter.styled';
 
@@ -8,7 +8,7 @@ export const Filter = () => {
 
     const filerContact = e => {
         const { value } = e.currentTarget;
-        dispatch(filterAction(value));
+        dispatch( changeFilterAction(value));
     }
 
     return (
