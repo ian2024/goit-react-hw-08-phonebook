@@ -5,8 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { PublicRoute } from './PublicRoute';
 import { Header } from './Header';
-import { useDispatch, useSelector } from 'react-redux';
-import { getToken } from 'redux/selector';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchCurrentUser } from 'redux/phonebook/auth/auth-operations';
 
@@ -18,14 +17,11 @@ const Login = lazy(() => import('../pages/Login'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const token = useSelector(getToken);
+ 
 
   useEffect(() => {
-    if (token) {
-      dispatch(fetchCurrentUser());
-    }
-    return;
-  }, [dispatch, token]);
+dispatch(fetchCurrentUser());
+  }, [dispatch]);
 
   return (
     <>
